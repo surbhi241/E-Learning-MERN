@@ -16,7 +16,7 @@ const validateLoginInput = require("../../validation/login");
 // @desc   Register users route
 // @access Public
 
-router.post("/users/register", (req, res) => {
+router.post("/api/users/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
 
   // Check Validation
@@ -61,7 +61,7 @@ router.post("/users/register", (req, res) => {
 // @desc   Login users route => returning jwt token
 // @access Public
 
-router.post("/users/login", (req, res) => {
+router.post("/api/users/login", (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
 
   // Check Validation
@@ -130,7 +130,7 @@ router.get(
   }
 );
 
-router.get("/users", (req, res) => {
+router.get("/api/users", (req, res) => {
   //var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
 
   User.find()
@@ -147,7 +147,7 @@ router.get("/users", (req, res) => {
           
 })
 
-router.post('/user', (req, res)=>{
+router.post('/api/user', (req, res)=>{
   //req.body
   if(!req.body){
       return res.status(400).send("request body is missing")
@@ -167,7 +167,7 @@ router.post('/user', (req, res)=>{
   })
 })
 
-router.get('/user', (req, res) => {
+router.get('/api/user', (req, res) => {
   //var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
 
   User.findOne({
@@ -184,7 +184,7 @@ router.get('/user', (req, res) => {
 })
 
 
-router.put('/user/', (req, res) => {
+router.put('/api/user/', (req, res) => {
   //var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
 
   User.findOneAndUpdate({
@@ -202,7 +202,7 @@ router.put('/user/', (req, res) => {
       })
 })
 
-router.delete('/user', (req, res) => {
+router.delete('/api/user', (req, res) => {
   //var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
 
   User.findOneAndRemove({
