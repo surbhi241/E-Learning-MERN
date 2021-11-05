@@ -9,7 +9,7 @@ export const registerUser = (userData, history) => dispatch => {
   //so we need to use thunk middleware
 
   axios
-    .post("http://localhost:5000/users/register", userData)
+    .post("http://edu_demo.w3.cafe/users/register", userData)
     .then(res => history.push("/login"))
     .catch(err =>
       dispatch({
@@ -23,7 +23,7 @@ export const registerUser = (userData, history) => dispatch => {
 //Login - Get user token , //loginUser action creator
 export const loginUser = userData => dispatch => {
   axios
-    .post("http://localhost:5000/users/login", userData)
+    .post("http://edu_demo.w3.cafe/users/login", userData)
     .then(res => {
      // console.log(res);
       //save token to local storage
