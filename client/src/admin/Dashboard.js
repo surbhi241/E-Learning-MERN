@@ -17,7 +17,7 @@ class Dashboard extends Component {
         };
     }
 	getCoursedata(){
-		axios.get('/courses/')
+		axios.get('/api/courses/')
             .then(response => {
 				
 				var dict={};
@@ -67,7 +67,7 @@ class Dashboard extends Component {
 	}
 
 	getEnrollmentdata(){
-		axios.get('http://localhost:5000/enrollments/')
+		axios.get('/api/enrollments/')
             .then(response => {
 				
 				var dict={};
