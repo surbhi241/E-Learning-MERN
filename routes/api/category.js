@@ -55,7 +55,7 @@ router.put('/api/category/', (req, res) => {
         })
 })
 
-router.get('/categories', (req, res) => {
+router.get('/api/categories', (req, res) => {
     //var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
 
     catmodel.find()
