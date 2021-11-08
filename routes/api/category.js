@@ -2,7 +2,7 @@ let catmodel=require('../../models/Category')
 let express=require('express')
 let router= express.Router()
 
-router.post('/category/add', (req, res)=>{
+router.post('/api/category/add', (req, res)=>{
     //req.body
     if(!req.body){
         return res.status(400).send("request body is missing")
@@ -23,7 +23,7 @@ router.post('/category/add', (req, res)=>{
 })
 
 
-router.get('/category', (req, res) => {
+router.get('/api/category', (req, res) => {
     //var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
 
     catmodel.findOne({
@@ -39,7 +39,7 @@ router.get('/category', (req, res) => {
         })
 })
 
-router.put('/category/', (req, res) => {
+router.put('/api/category/', (req, res) => {
     catmodel.findOneAndUpdate({
         _id: req.query.id
     }, req.body,{
