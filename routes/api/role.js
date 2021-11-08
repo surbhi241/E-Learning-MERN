@@ -3,7 +3,7 @@ let express=require('express')
 let router= express.Router()
 
 
-router.post('/role/add', (req, res)=>{
+router.post('/api/role/add', (req, res)=>{
     //req.body
     if(!req.body){
         return res.status(400).send("request body is missing")
@@ -23,7 +23,7 @@ router.post('/role/add', (req, res)=>{
     })
 })
 
-router.get('/showroles', (req, res) => {
+router.get('/api/showroles', (req, res) => {
     //var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
 
     rolemodel.find()

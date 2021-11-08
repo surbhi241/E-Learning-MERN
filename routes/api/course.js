@@ -5,7 +5,7 @@ let catmodel = require("../../models/Category");
 let express = require("express");
 let router = express.Router();
 
-router.post("/course/add", (req, res) => {
+router.post("/api/course/add", (req, res) => {
   //req.body
   if (!req.body) {
     return res.status(400).json("request body is missing");
@@ -37,7 +37,7 @@ router.post("/course/add", (req, res) => {
   });
 });
 
-router.get("/courses", (req, res, next) => {
+router.get("/api/courses", (req, res, next) => {
   //var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
 
   coursemodel
@@ -55,7 +55,7 @@ router.get("/courses", (req, res, next) => {
     });
 });
 
-router.get("/course", (req, res) => {
+router.get("/api/course", (req, res) => {
   //var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
 
   coursemodel
@@ -72,7 +72,7 @@ router.get("/course", (req, res) => {
 });
 
 //get courses by instructor id
-router.get("/coursebyinstructor", (req, res) => {
+router.get("/api/coursebyinstructor", (req, res) => {
   //var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
 
   coursemodel
@@ -88,7 +88,7 @@ router.get("/coursebyinstructor", (req, res) => {
     });
 });
 
-router.put("/course/", (req, res) => {
+router.put("/api/course/", (req, res) => {
   //var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
 
   coursemodel
@@ -109,7 +109,7 @@ router.put("/course/", (req, res) => {
     });
 });
 
-router.delete("/course", (req, res) => {
+router.delete("/api/course", (req, res) => {
   //var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
 
   coursemodel

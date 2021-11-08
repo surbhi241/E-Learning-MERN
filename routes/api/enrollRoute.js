@@ -4,7 +4,7 @@ let usermodel = require("../../models/User");
 let express = require("express");
 let router = express.Router();
 
-router.get("/enrollments", (req, res, next) => {
+router.get("/api/enrollments", (req, res, next) => {
   enrollmodel
     .find()
     .populate({ path: "student", model: "users" })
@@ -20,7 +20,7 @@ router.get("/enrollments", (req, res, next) => {
     });
 });
 
-router.get("/enrollmentbystudent", (req, res) => {
+router.get("/api/enrollmentbystudent", (req, res) => {
   enrollmodel
     .find({
       student: req.query.id
@@ -34,7 +34,7 @@ router.get("/enrollmentbystudent", (req, res) => {
     });
 });
 
-router.get("/checkenrollment", (req, res) => {
+router.get("/api/checkenrollment", (req, res) => {
   enrollmodel
     .findOne({
       student: req.query.id,
@@ -49,7 +49,7 @@ router.get("/checkenrollment", (req, res) => {
     });
 });
 
-router.post("/enroll/add", (req, res) => {
+router.post("/api/enroll/add", (req, res) => {
   if (!req.body) {
     return res.status(400).send("request body is missing");
   }
@@ -80,7 +80,7 @@ router.post("/enroll/add", (req, res) => {
   });
 });
 
-router.post("/enrollbystudent/add", (req, res) => {
+router.post("/api/enrollbystudent/add", (req, res) => {
   //req.body
   if (!req.body) {
     return res.status(400).send("request body is missing");
@@ -100,7 +100,7 @@ router.post("/enrollbystudent/add", (req, res) => {
     });
 });
 
-router.delete("/enrollment", (req, res) => {
+router.delete("/api/enrollment", (req, res) => {
   //var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
 
   enrollmodel

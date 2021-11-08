@@ -8,7 +8,7 @@ var multer = require("multer");
 let lecturemodel = require("../../models/Lecture.js");
 
 /*Get videos*/
-router.get("/lectures", function(req, res) {
+router.get("/api/lectures", function(req, res) {
   lecturemodel
     .find({
       course: req.query.id
@@ -28,7 +28,7 @@ router.get("/lectures", function(req, res) {
 });
 
 /* POST videos*/
-router.post("/lectures/localupload", function(req, res) {
+router.post("/api/lectures/localupload", function(req, res) {
   // res.send('this is post route upload');
   //  console.log(req.files.file);
 
@@ -54,7 +54,7 @@ router.post("/lectures/localupload", function(req, res) {
   });
 });
 
-router.post("/lectures/youtubeupload", (req, res) => {
+router.post("/api/lectures/youtubeupload", (req, res) => {
   //req.body
   if (!req.body) {
     return res.status(400).send("request body is missing");
