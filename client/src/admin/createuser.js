@@ -35,7 +35,7 @@ export default class CreateUser extends Component {
        
         
 
-            axios.get('http://localhost:5000/showroles/')
+            axios.get('/api/showroles/')
             .then(response => {
                 this.setState({ Roles: response.data });
             })
@@ -99,8 +99,7 @@ export default class CreateUser extends Component {
             role: this.state.role,
             todo_completed: this.state.todo_completed
         };
-
-        axios.post('http://localhost:5000/user/', newTodo)
+        axios.post('/api/user/', newTodo)
         .then((result) => {
             this.props.history.push("/allusers/")
           });

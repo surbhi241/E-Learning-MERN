@@ -44,7 +44,7 @@ class BlogDetailsLeftSidebar extends Component {
     };
     if (this.state.buttonclass == "btn btn-success") {
       axios
-        .post("http://localhost:5000/enrollbystudent/add", newTodo)
+        .post("/api/enrollbystudent/add", newTodo)
         .then(result => {
           //this.props.history.push("/addtoplaylist/"+this.props.match.params.id)
           toast.success("Added successfully");
@@ -66,17 +66,17 @@ class BlogDetailsLeftSidebar extends Component {
     }
 
     const response = await axios
-      .get("http://localhost:5000/lectures?id=" + this.props.match.params.id)
+      .get("/api/lectures?id=" + this.props.match.params.id)
       .then(result => {
         console.log(
-          "http://localhost:5000/checkenrollment?id=" +
+          "/api/checkenrollment?id=" +
             this.state.user +
             "&&courseid=" +
             this.props.match.params.id
         );
         const responseEnrolled = axios
           .get(
-            "http://localhost:5000/checkenrollment?id=" +
+            "/api/checkenrollment?id=" +
               this.state.user +
               "&&courseid=" +
               this.props.match.params.id

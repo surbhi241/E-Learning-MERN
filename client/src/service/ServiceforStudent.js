@@ -13,7 +13,7 @@ class Services extends Component {
 
     const response = await axios
       .get(
-        "http://localhost:5000/enrollmentbystudent?id=" +
+        "/api/enrollmentbystudent?id=" +
           this.props.match.params.id
       )
       .then(result => {

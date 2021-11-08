@@ -14,7 +14,7 @@ class Sidebar extends Component {
   componentDidMount() {
     //to get data from mongo link
     let user = JSON.parse(localStorage.getItem('userid'));
-    axios.get('http://localhost:5000/coursebyinstructor?id='+user)
+    axios.get('/api/coursebyinstructor?id='+user)
         .then(response => {
             this.setState({ Courses: response.data });
             console.log(user);

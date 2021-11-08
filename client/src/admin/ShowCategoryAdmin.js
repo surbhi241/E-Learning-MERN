@@ -22,7 +22,7 @@ export default class ShowCategory extends Component {
   componentDidMount() {
     //to get data from mongo link
     axios
-      .get("http://localhost:5000/categories/")
+      .get("/api/categories/")
       .then(response => {
         this.setState({ todos: response.data });
       })
@@ -34,7 +34,7 @@ export default class ShowCategory extends Component {
   delete(id) {
     console.log(id);
     axios
-      .delete("http://localhost:5000/category?id=" + id)
+      .delete("/api/category?id=" + id)
       .then(result => {
         // this.forceUpdate()
         // this.props.history.push("/showcategory/")

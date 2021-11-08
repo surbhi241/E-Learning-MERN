@@ -311,7 +311,7 @@ class NavBar extends Component {
                             </li>
                             <li>
                               {" "}
-                              <a herf=" http://localhost:5000/hostname/:id">
+                              <a herf=" /api/hostname/:id">
                                 image
                               </a>
                             </li>

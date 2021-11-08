@@ -30,7 +30,7 @@ export default class Upload extends Component {
   componentDidMount() {
     axios
       .get(
-        "http://localhost:5000/coursebyinstructor?id=" +
+        "/api/coursebyinstructor?id=" +
           this.props.match.params.id
       )
       .then(response => {
@@ -147,7 +147,7 @@ export default class Upload extends Component {
 
     console.log(data);
     axios
-      .post("http://localhost:5000/lectures/localupload", data, {
+      .post("/api/lectures/localupload", data, {
         onUploadProgress: ProgressEvent => {
           this.setState({
             loaded: (ProgressEvent.loaded / ProgressEvent.total) * 100

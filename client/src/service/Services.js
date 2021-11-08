@@ -12,7 +12,7 @@ class Services extends Component {
     //this.onTextSubmit("react tutorials");
 
     const response = await axios
-      .get("http://localhost:5000/courses")
+      .get("/api/courses")
       .then(result => {
         console.log(result.data[0]);
         return result;
