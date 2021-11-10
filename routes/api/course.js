@@ -21,7 +21,7 @@ router.post("/api/course/add", (req, res) => {
     }
     if (req.files != undefined) {
       let imagefile = req.files.file;
-      imagefile.mv(`Client/public/assets/course_image_${req.files.file.name}`);
+      imagefile.mv(`client/public/assets/course_image_${req.files.file.name}`);
       if (imagefile) {
         req.body.image = "/assets/course_image_" + imagefile.name;
       }
@@ -101,12 +101,12 @@ router.put("/api/course/", (req, res) => {
 
   if (req.files != undefined) {
     let imagefile = req.files.file;
-    imagefile.mv(`Client/public/assets/course_image_${req.files.file.name}`);
+    imagefile.mv(`client/public/assets/course_image_${req.files.file.name}`);
     if (imagefile) {
       req.body.image = "/assets/course_image_" + imagefile.name;
     }
   }
-  
+
   coursemodel
     .findOneAndUpdate(
       {

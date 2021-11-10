@@ -40,7 +40,7 @@ router.post("/api/lectures/localupload", function(req, res) {
     console.log(req.files);
     if (req.files != undefined) {
       let imagefile = req.files.file;
-      imagefile.mv(`Client/public/assets/${req.files.file.name}`);
+      imagefile.mv(`client/public/assets/${req.files.file.name}`);
       if (imagefile) {
         req.body.videoLink = "/assets/" + imagefile.name;
       }
