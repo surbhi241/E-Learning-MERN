@@ -19,6 +19,14 @@ router.post("/api/course/add", (req, res) => {
       console.log("Cat printed" + cat);
       req.body.category = cat[0]._id;
     }
+    if (req.files != undefined) {
+      let imagefile = req.files.file;
+      imagefile.mv(`Client/public/assets/course_image_${req.files.file.name}`);
+      if (imagefile) {
+        req.body.image = "/assets/course_image_" + imagefile.name;
+      }
+    }
+
     console.log("Instructor Id" + req.body.instructor);
     const model = new coursemodel(req.body);
     model
@@ -91,6 +99,14 @@ router.get("/api/coursebyinstructor", (req, res) => {
 router.put("/api/course/", (req, res) => {
   //var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
 
+  if (req.files != undefined) {
+    let imagefile = req.files.file;
+    imagefile.mv(`Client/public/assets/course_image_${req.files.file.name}`);
+    if (imagefile) {
+      req.body.image = "/assets/course_image_" + imagefile.name;
+    }
+  }
+  
   coursemodel
     .findOneAndUpdate(
       {

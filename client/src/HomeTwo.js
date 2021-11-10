@@ -20,13 +20,13 @@ class HomeTwo extends Component {
         <HeroSliderTwo />
 
         {/* Video CTA */}
-        <VideoCta />
+        {/* <VideoCta /> */}
 
         {/* Project Slider */}
         <ProjectSliderTwo />
 
         {/* Service Tab */}
-        <ServiceTab />
+        {/* <ServiceTab /> */}
 
         {/* Testimonial Slider */}
         <TestimonialSlider />

@@ -49,7 +49,7 @@ class NavBar extends Component {
                           style={{ width: "100%" }}
                         >
                           <nav className="main-nav">
-                            <a href={`${process.env.PUBLIC_URL}/home-two`}>
+                            <a href={`${process.env.PUBLIC_URL}/`}>
                               <div className="logoHead">
                                 <img
                                   src="/assets/img/logo/logonew.png"
@@ -91,7 +91,18 @@ class NavBar extends Component {
                                 >
                                   ENROLLED USERS
                                 </a>
+                                
                               </li>
+                              <li>
+                <a href={`${process.env.PUBLIC_URL}/addcourse/` + users.id}>
+                  ADD COURSES
+                </a>
+              </li>
+              <li>
+                <a href={`${process.env.PUBLIC_URL}/add-lecture/` + users.id}>
+                  ADD LECTURE
+                </a>
+              </li>
                               <li className="inactive">
                                 <a
                                   onClick={this.onLogoutClick.bind(this)}
@@ -221,9 +232,9 @@ class NavBar extends Component {
           </Link>
         </li>
         <li>
-          <Link className="nav-link" to="/login/instructor">
+          {/* <Link className="nav-link" to="/login/instructor">
             Teach On Demo
-          </Link>
+          </Link> */}
         </li>
       </React.Fragment>
     );
@@ -245,7 +256,7 @@ class NavBar extends Component {
                         style={{ width: "100%" }}
                       >
                         <nav className="main-nav">
-                          <a href={`${process.env.PUBLIC_URL}/home-two`}>
+                          <a href={`${process.env.PUBLIC_URL}/`}>
                             <div className="logoHead">
                               <img
                                 src="/assets/img/logo/logonew.png"
@@ -258,10 +269,15 @@ class NavBar extends Component {
 
                           <ul id="main-nav-ul">
                             <li>
-                              <a href={`${process.env.PUBLIC_URL}/home-two`}>
+                              <a href={`${process.env.PUBLIC_URL}/`}>
                                 HOME
                               </a>
                             </li>
+                            <li>
+          <Link className="nav-link" to="/courses">
+            COURSES
+          </Link>
+        </li>
                             <li>
                               <a href={`${process.env.PUBLIC_URL}/about-us`}>
                                 ABOUT
@@ -291,13 +307,13 @@ class NavBar extends Component {
                             }}
                           >
                             <li className="has-children has-children--multilevel-submenu">
-                              <a href={`${process.env.PUBLIC_URL}/home-two`}>
+                              <a href={`${process.env.PUBLIC_URL}/`}>
                                 HOME
                               </a>
                               <ul className="submenu">
                                 <li>
                                   <a
-                                    href={`${process.env.PUBLIC_URL}/home-two`}
+                                    href={`${process.env.PUBLIC_URL}/`}
                                   >
                                     Homepage Two
                                   </a>

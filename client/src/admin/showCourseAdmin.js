@@ -30,6 +30,8 @@ export default class UserList extends Component {
   }
   delete(id) {
     console.log(id);
+    let confirmed = window.confirm('Are you sure?');
+    if (!confirmed) return;
     axios
       .delete("/api/course?id=" + id)
       .then(result => {
@@ -81,7 +83,7 @@ export default class UserList extends Component {
             >
               Edit
             </a>
-            {/* <button onClick={this.delete.bind(this, props.todo._id)} class="btn btn-danger">Delete</button> */}
+            <button onClick={this.delete.bind(this, props.todo._id)} class="btn btn-danger">Delete</button>
             {/* <p>{message}</p> */}
           </td>
         </tr>

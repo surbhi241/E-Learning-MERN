@@ -23,9 +23,11 @@
 }
 
 .service-grid-item{
+    border: 2px solid #393939;;
+    border-radius: 5px;
     &__image{
         position: relative;
-        margin-bottom: 60px;
+        margin-bottom: 6px;
         .icon{
             width: 70px;
             height: 70px;
@@ -36,12 +38,10 @@
             bottom: -35px;
             left: 20px;
             transition: $transition--cubic;
-
             i{
                 color: $white;
                 font-size: 40px;
             }
-
         }
 
         a{
@@ -62,6 +62,7 @@
     
     &__content{
         line-height: 1;
+        padding: 6px;
         .title{
             a{
                 font-size: 22px;

@@ -40,12 +40,12 @@ class Services extends Component {
                 <a
                   href={
                     `${process.env.PUBLIC_URL}/` +
-                    `blog-details-left-sidebar/` +
+                    `course-viewer/` +
                     `${val.course._id}`
                   }
                 >
                   <img
-                    src={val.course.courseImage}
+                    src={val.course.image}
                     className="img-fluid"
                     alt="Service Grid"
                   />
@@ -60,7 +60,7 @@ class Services extends Component {
                   <a
                     href={
                       `${process.env.PUBLIC_URL}/` +
-                      `blog-details-left-sidebar/` +
+                      `course-viewer/` +
                       `${val.course._id}`
                     }
                   >

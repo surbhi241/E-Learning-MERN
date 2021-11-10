@@ -24,7 +24,7 @@ class MobileMenu extends Component{
                             <a href={`${process.env.PUBLIC_URL}/home-one`}>Home</a>
                                 <ul className="sub-menu">
                                     <li><a href={`${process.env.PUBLIC_URL}/home-one`}>Homepage One</a></li>
-                                    <li><a href={`${process.env.PUBLIC_URL}/home-two`}>Homepage Two</a></li>
+                                    <li><a href={`${process.env.PUBLIC_URL}/`}>Homepage Two</a></li>
                                 </ul>
                             </li>
                             <li><a href={`${process.env.PUBLIC_URL}/about-us`}>ABOUT</a></li>

@@ -11,6 +11,10 @@ const CourseSchema = new Schema(
       type: String,
       required: true
     },
+    image: {
+      type: String,
+      required: false
+    },
     instructor: { type: Schema.Types.ObjectId, ref: "User" },
     category: { type: Schema.Types.String, ref: "Category" }
   },

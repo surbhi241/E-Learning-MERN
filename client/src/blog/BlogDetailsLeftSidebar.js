@@ -64,7 +64,11 @@ class BlogDetailsLeftSidebar extends Component {
         addcourse: true
       });
     }
-
+    axios.get('/api/course?id='+ this.props.match.params.id)
+      .then((response) => {
+        console.log('response....', response);
+        this.setState({course: response.data});
+      })
     const response = await axios
       .get("/api/lectures?id=" + this.props.match.params.id)
       .then(result => {
@@ -108,6 +112,7 @@ class BlogDetailsLeftSidebar extends Component {
   };
 
   render() {
+    console.log('this.state.course', this.state.course);
     return (
       <div>
         {/* Navigation bar */}
@@ -120,7 +125,7 @@ class BlogDetailsLeftSidebar extends Component {
             <div className="row">
               <div className="col">
                 <div className="page-banner text-center">
-                  <h1>Course Details</h1>
+                  <h1>{this.state.course ? this.state.course.courseName : 'Loading...'}</h1>
                   <ul className="page-breadcrumb">
                     {/* <li>
                       <a href="/">Home</a>
@@ -153,6 +158,7 @@ class BlogDetailsLeftSidebar extends Component {
                         </div>
 
                         <div className="five wide column">
+                          <h5>Lectures:</h5>
                           <VideoList
                             onVideoSelect={this.onVideoSelect}
                             videos={this.state.videos}

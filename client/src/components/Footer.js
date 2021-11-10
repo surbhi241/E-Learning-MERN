@@ -15,7 +15,7 @@ class Footer extends Component {
                       {/* footer intro wrapper */}
                       <div className="footer-intro-wrapper">
                         <div className="footer-logo">
-                          <a href={`${process.env.PUBLIC_URL}/home-two`}>
+                          <a href={`${process.env.PUBLIC_URL}/`}>
                             <div className="logoHead">
                               <img
                                 src="/assets/img/logo/logonew.png"

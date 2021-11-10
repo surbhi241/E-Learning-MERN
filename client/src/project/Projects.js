@@ -3,66 +3,29 @@ import NavBar from "../components/NavBar";
 import BrandLogoSlider from "../components/BrandLogoSlider";
 import Footer from "../components/Footer";
 import MobileMenu from "../components/MobileMenu";
+import axios from "axios";
+
 class Projects extends Component {
+  state = {
+    data: []
+  };
+  async componentDidMount() {
+    //this.onTextSubmit("react tutorials");
+
+    const response = await axios
+      .get("/api/courses")
+      .then(result => {
+        console.log(result.data[0]);
+        return result;
+      });
+
+    this.setState({
+      data: response.data
+    });
+  }
+
   render() {
-    let data = [
-      {
-        pageLink: "project-details",
-        img: "project-1.jpg",
-        projectTitle: "Land Minning",
-        projectSubtitle:
-          "Lorem ipsum dolor sit amet consect adipisi elit sed do eiusm tempor"
-      },
-      {
-        pageLink: "project-details",
-        img: "project-2.jpg",
-        projectTitle: "Work Management",
-        projectSubtitle:
-          "Lorem ipsum dolor sit amet consect adipisi elit sed do eiusm tempor"
-      },
-      {
-        pageLink: "project-details",
-        img: "project-3.jpg",
-        projectTitle: "Material Engineering",
-        projectSubtitle:
-          "Lorem ipsum dolor sit amet consect adipisi elit sed do eiusm tempor"
-      },
-      {
-        pageLink: "project-details",
-        img: "project-4.jpg",
-        projectTitle: "Power and Energy",
-        projectSubtitle:
-          "Lorem ipsum dolor sit amet consect adipisi elit sed do eiusm tempor"
-      },
-      {
-        pageLink: "project-details",
-        img: "project-5.jpg",
-        projectTitle: "Land Minning",
-        projectSubtitle:
-          "Lorem ipsum dolor sit amet consect adipisi elit sed do eiusm tempor"
-      },
-      {
-        pageLink: "project-details",
-        img: "project-6.jpg",
-        projectTitle: "Work Management",
-        projectSubtitle:
-          "Lorem ipsum dolor sit amet consect adipisi elit sed do eiusm tempor"
-      },
-      {
-        pageLink: "project-details",
-        img: "project-7.jpg",
-        projectTitle: "Material Engineering",
-        projectSubtitle:
-          "Lorem ipsum dolor sit amet consect adipisi elit sed do eiusm tempor"
-      },
-      {
-        pageLink: "project-details",
-        img: "project-8.jpg",
-        projectTitle: "Power and Energy",
-        projectSubtitle:
-          "Lorem ipsum dolor sit amet consect adipisi elit sed do eiusm tempor"
-      }
-    ];
+   let data = this.state.data;
 
     let Datalist = data.map((val, i) => {
       return (
@@ -73,9 +36,13 @@ class Projects extends Component {
           <div className="service-grid-item service-grid-item--style2">
             <div className="service-grid-item__image">
               <div className="service-grid-item__image-wrapper">
-                <a href={`${process.env.PUBLIC_URL}/${val.pageLink}`}>
+                <a href={
+                    `${process.env.PUBLIC_URL}/` +
+                    `course-viewer/` +
+                    `${val._id}`
+                  }>
                   <img
-                    src={`assets/img/projects/${val.img}`}
+                    src={val.image}
                     className="img-fluid"
                     alt=""
                   />
@@ -84,13 +51,21 @@ class Projects extends Component {
             </div>
             <div className="service-grid-item__content">
               <h3 className="title">
-                <a href={`${process.env.PUBLIC_URL}/${val.pageLink}`}>
-                  {val.projectTitle}
+                <a href={
+                  `${process.env.PUBLIC_URL}/` +
+                  `course-viewer/` +
+                  `${val._id}`
+                }>
+                  {val.courseName}
                 </a>
               </h3>
-              <p className="subtitle">{val.projectSubtitle}</p>
+              <p className="subtitle">{val.courseDescription}</p>
               <a
-                href={`${process.env.PUBLIC_URL}/${val.pageLink}`}
+                href={
+                  `${process.env.PUBLIC_URL}/` +
+                  `course-viewer/` +
+                  `${val._id}`
+                }
                 className="see-more-link"
               >
                 SEE MORE
@@ -113,12 +88,12 @@ class Projects extends Component {
             <div className="row">
               <div className="col">
                 <div className="page-banner text-center">
-                  <h1>Blogs</h1>
+                  <h1>Courses</h1>
                   <ul className="page-breadcrumb">
                     <li>
                       <a href="/">Home</a>
                     </li>
-                    <li>Blogs</li>
+                    <li>Courses</li>
                   </ul>
                 </div>
               </div>

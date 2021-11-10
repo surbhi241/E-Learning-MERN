@@ -9,7 +9,7 @@ const ShowCourse = props => (
   <option key={props.todo.courseName} value={props.todo.courseName}>
     {props.todo.courseName}
   </option>
-  // <button type="button" class="list-group-item list-group-item-action">{props.todo.courseName}</button>
+  // <button type="button" className="list-group-item list-group-item-action">{props.todo.courseName}</button>
 );
 export default class Upload extends Component {
   constructor(props) {
@@ -175,16 +175,16 @@ export default class Upload extends Component {
     return (
       <div>
         <NavBar />
-        <div class="container">
-          <div class="row" style={{ marginTop: "30px" }}>
-            <div class="offset-md-3 col-md-6">
+        <div className="container">
+          <div className="row" style={{ marginTop: "30px" }}>
+            <div className="offset-md-3 col-md-6">
               <form
                 action="lectures/localupload"
                 method="POST"
                 encType="multipart/form-data"
               >
                 <h1 className="h3 mb-3 font-weight-normal">Upload Video</h1>
-                <div class="form-group files">
+                <div className="form-group files">
                   <div className="form-group">
                     <label>Course Name </label>
                     <select
@@ -212,12 +212,12 @@ export default class Upload extends Component {
                   <input
                     type="file"
                     name="file"
-                    class="form-control"
+                    className="form-control"
                     multiple
                     onChange={this.onChangeHandler}
                   />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <ToastContainer />
                   <Progress max="100" color="success" value={this.state.loaded}>
                     {Math.round(this.state.loaded, 2)}%
@@ -236,7 +236,7 @@ export default class Upload extends Component {
                 </div>
                 <button
                   type="button"
-                  class="btn btn-success btn-block"
+                  className="btn btn-success btn-block"
                   onClick={this.onClickHandler}
                 >
                   Submit

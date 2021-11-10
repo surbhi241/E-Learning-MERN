@@ -48,7 +48,7 @@ class Services extends Component {
                 <a
                   href={
                     `${process.env.PUBLIC_URL}/` +
-                    `blog-details-left-sidebar/` +
+                    `course-viewer/` +
                     `${val._id}`
                   }
                 >
@@ -68,7 +68,7 @@ class Services extends Component {
                   <a
                     href={
                       `${process.env.PUBLIC_URL}/` +
-                      `blog-details-left-sidebar/` +
+                      `course-viewer/` +
                       `${val._id}`
                     }
                   >

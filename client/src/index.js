@@ -42,6 +42,7 @@ import PrivateRoute from "./components/common/PrivateRoute";
 //actions
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { clearCurrentProfile } from "./actions/profileActions";
+import axios from 'axios';
 
 //profile stuff
 
@@ -53,6 +54,19 @@ import Profile from "./components/profile/Profile";
 import FinalDashboard from "./components/FinalDashboard";
 import FinalProfiles from "./components/FinalProfiles";
 
+
+axios.interceptors.request.use(function (config) {
+  // Do something before request is sent
+  console.info('process.env', process.env);
+  console.info('config', config);
+  if (process.env.NODE_ENV === "development") {
+    config.url = config.url.replace('/api/', 'http://localhost:5000/api/');
+  }
+  return config;
+}, function (error) {
+  // Do something with request error
+  return Promise.reject(error);
+});
 //check for token  to avoid state destroy on reload
 if (localStorage.jwtToken) {
   //set auth token header auth
@@ -88,12 +102,6 @@ class Root extends Component {
 
             <Route
               exact
-              path={`${process.env.PUBLIC_URL}/home-two`}
-              component={HomeTwo}
-            />
-
-            <Route
-              exact
               path={`${process.env.PUBLIC_URL}/about-us`}
               component={About}
             />
@@ -117,9 +125,9 @@ class Root extends Component {
               path={`${process.env.PUBLIC_URL}/service-details-left-sidebar`}
               component={ServiceDetailsLeftSidebar}
             />
-            <PrivateRoute
+            <Route
               exact
-              path={`${process.env.PUBLIC_URL}/projects`}
+              path={`${process.env.PUBLIC_URL}/courses`}
               component={Projects}
             />
             
@@ -140,7 +148,7 @@ class Root extends Component {
             />
             <PrivateRoute
               exact
-              path={`${process.env.PUBLIC_URL}/blog-details-left-sidebar/:id`}
+              path={`${process.env.PUBLIC_URL}/course-viewer/:id`}
               component={BlogDetailsLeftSidebar}
             />
             <Route

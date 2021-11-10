@@ -1,11 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import NavBar from "../components/NavBar";
-import BrandLogoSlider from "../components/BrandLogoSlider";
-import Footer from "../components/Footer";
-import MobileMenu from "../components/MobileMenu";
-import PublicCourseList from '../components/course/PublicCourseList';
-class Services extends Component {
+class PublicCourseList extends Component {
   state = {
     data: []
   };
@@ -68,58 +63,18 @@ class Services extends Component {
                 <p className="subtitle">{val.courseDescription}</p>
               </div>
           </div>
+          <div className="clearfix"></div>
         </div>
       );
     });
 
     return (
-      <div>
-        {/* Navigation bar */}
-        <NavBar />
+        <div className="service-item-wrapper">
+            <div className="row">{Datalist}</div>
 
-        {/* breadcrumb */}
-        {/*====================  breadcrumb area ====================*/}
-        <div className="breadcrumb-area breadcrumb-bg">
-          <div className="container">
-            <div className="row">
-              <div className="col">
-                <div className="page-banner text-center">
-                  <h1>ALL COURSES</h1>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-        {/*====================  End of breadcrumb area  ====================*/}
-
-        {/*====================  service page content ====================*/}
-        <div className="page-wrapper section-space--inner--120">
-          {/*Service section start*/}
-          <div className="service-section">
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-12">
-                  <PublicCourseList />
-                </div>
-              </div>
-            </div>
-          </div>
-          {/*Service section end*/}
-        </div>
-
-        {/*====================  End of service page content  ====================*/}
-
-        {/* Brand logo */}
-        <BrandLogoSlider background="grey-bg" />
-
-        {/* Footer */}
-        <Footer />
-
-        {/* Mobile Menu */}
-        <MobileMenu />
-      </div>
     );
   }
 }
 
-export default Services;
+export default PublicCourseList;

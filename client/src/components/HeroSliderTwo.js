@@ -31,24 +31,24 @@ class HeroSliderOne extends Component {
     let data = [
       {
         bgImg: "crowsel3.png",
-        sliderTitle: "Build Your Dream With Passion",
+        sliderTitle: "Social Welfare Courses",
         sliderSubtitle:
-          "Learn, Code and start developing your own beautiful websites at no cost.",
-        btnLink: "contact-us"
+          "Social Welfare Courses.",
+        btnLink: "courses"
       },
       {
         bgImg: "crowsel2.png",
-        sliderTitle: "Build Your Dream With Passion",
+        sliderTitle: "Social Welfare Courses",
         sliderSubtitle:
-          "Learn, Code and start developing your own beautiful websites at no cost.",
-        btnLink: "contact-us"
+          "Social Welfare Courses.",
+        btnLink: "courses"
       },
       {
         bgImg: "crowsel0.png",
-        sliderTitle: "Build Your Dream With Passion",
+        sliderTitle: "Social Welfare Courses",
         sliderSubtitle:
-          "Learn, Code and start developing your own beautiful websites at no cost.",
-        btnLink: "contact-us"
+          "Social Welfare Courses.",
+        btnLink: "courses"
       }
     ];
 
